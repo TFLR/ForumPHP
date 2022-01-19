@@ -1,4 +1,4 @@
-<?php require('actions/signupinAction.php')?>
+<?php require('actions/users/signupinAction.php')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
