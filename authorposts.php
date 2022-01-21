@@ -31,6 +31,7 @@ require('actions/articles/allAuthorPosts.php');
       <br> </br>
       <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
       <span class="subtle"><?=$articles['date'];?></span>
+        <a href="actions/articles/deletePostAction.php?id=<?= $articles['id']; ?>" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Delete</a>
         <a href="editposts.php?id=<?= $articles['id']; ?>" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Modify</a>
         <a href="view/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">View</a>
       </div>
