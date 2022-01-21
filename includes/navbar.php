@@ -10,10 +10,10 @@
         <ul>
           <li><a href="index.php">Home</a></li>
           <li><a href="newpost.php">New</a></li>
-          <li><a href="authorarticles.php">My Articles</a></li>
+          <li><a href="authorposts.php">My Articles</a></li>
           <li><a href="#">Account</a></li>
           <li><a href="#">Panel Admin</a></li>
-          <li><a href="logout.php">Logout</a></li>
+          <li><a href="actions/users/logoutAction.php">Logout</a></li>
         </ul>
 
         <!-- nav-toggler for mobile version only -->

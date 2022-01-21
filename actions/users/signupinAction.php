@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('actions/database.php');
 
 //vérifie si la variable validate est déclarée

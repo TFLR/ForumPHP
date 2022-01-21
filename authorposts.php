@@ -1,5 +1,7 @@
-<?php require('actions/articles/allAuthorArticles.php');
-require('actions/users/securityAction.php');?>
+<?php 
+require('actions/users/securityAction.php');
+require('actions/articles/allAuthorPosts.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +28,10 @@ require('actions/users/securityAction.php');?>
       <span class="card-media-body-heading"><?=$articles['title'];?></span>
       </div>
       <span class="card-media-body-heading1"><?=$articles['description'];?></span>
+      <br> </br>
       <div class="card-media-body-supporting-bottom card-media-body-supporting-bottom-reveal">
       <span class="subtle"><?=$articles['date'];?></span>
-        <!-- <span class="card-media-body-supporting-bottom-text subtle">#Music #Party</span> -->
-        <a href="modify/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Modify</a>
+        <a href="editposts.php?id=<?= $articles['id']; ?>" class="card-media-body-supporting-bottom-text card-media-link u-float-right">Modify</a>
         <a href="view/" class="card-media-body-supporting-bottom-text card-media-link u-float-right">View</a>
       </div>
     </div>
