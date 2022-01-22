@@ -16,7 +16,7 @@
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
   color: #1a237e;
 }
-.card .img {
+.img {
   display: flex;
   justify-content: center;
   align-items: center;

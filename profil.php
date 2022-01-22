@@ -2,7 +2,7 @@
 require('actions/users/securityAction.php');
 require('actions/articles/allAuthorPosts.php');
 require('actions/users/allUsersInfosAction.php');
-require('actions/users/modifyPasswordAction.php');
+require('actions/users/modifyUserInfos.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,17 +23,28 @@ if($users = $getAllUsersArticles->fetch()){
 <div class="container3">
 
   <div class="card">
-    <div class="img">
-      <img src="https://placeimg.com/250/250/people">
-    </div>
-    <div class="info">
-    <form action="#" method="POST">
+    <!-- <form method="POST" action="" enctype="multipart/form-data" style = "height: 80px">
+      <label class = "label" for="profileImage"> 
+        <a style="cursor: pointer;"><em class="fa fa-upload"></em><img src='utilisateurs/pp/bokuto.jpg' width='200' height='200';></a></label> 
+        <input type="file" name="pp" id="profileImage" style="display: none;"/>
+      </form> -->
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <input type="file" name="avatar" />
+        <input type="submit" name="mettre a jour" />
+
+      <div class="info" style ="height: 300px;">
+    <?php if(isset($errorMsg)){echo $errorMsg.'</p>';} ?>
     <span class="name"><?=$users['username'];?></span>
+    <br></br>
+    <span class="job"><?=$users['email'];?></span>
+    <div>
+    <label for="exampleInputEmail1" class="form-label">Nouveau nom d'utilisateur :</label>
+    <input type="text" class="form-control" name="username">
+    </div>
     <div>
     <label for="exampleInputEmail1" class="form-label">Nouveau email :</label>
-    <textarea type="text" class="form-control" name="content" style='text-align: center;margin-top: 20px;'><?=$users['email'];?></textarea>
+    <input type="text" class="form-control" name="email">
     </div>
-      <span class="job"><?=$users['email'];?></span>
 <div>
             <label for="exampleInputEmail1" class="form-label">Nouveau mot de passe :</label>
             <input type="text" class="form-control" name="password">
@@ -79,8 +90,14 @@ if($users = $getAllUsersArticles->fetch()){
 
 .container{  
 text-align: center;  
-}  </style>
+}  
 
+img{
+  position: relative;
+  left: 100px;
+}
+
+</style>
 <script src="./assets/navbar.js"></script>
 </body>
 </html>
