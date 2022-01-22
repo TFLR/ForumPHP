@@ -12,7 +12,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     if($checkArticleExist->rowCount() > 0){
         $usersInfos = $checkArticleExist->fetch();
-        if($usersInfos['author_id']== $_SESSION['id']){
+        if(($usersInfos['author_id']== $_SESSION['id']) OR $_SESSION['admin']){
             $deleteArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
             $deleteArticle->execute(array($idArticle));
             header('location: ../../index.php');

@@ -34,7 +34,7 @@
         <br> </br>
         <span class="subtle"><?=$articles['date'];?></span>
         <?php
-      if($_SESSION['id'] == $articles['author_id']){
+      if(($_SESSION['id'] == $articles['author_id']) OR $_SESSION['admin'] == 1){
         ?>
         <a href="actions/articles/deletePostAction.php?id=<?= $articles['id']; ?>" class = "button">Delete</a>
         <a href="editposts.php?id=<?= $articles['id']; ?>" class = "button">Modify</a>

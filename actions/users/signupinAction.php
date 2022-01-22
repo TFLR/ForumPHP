@@ -19,7 +19,7 @@ if(isset($_POST['validate'])){
             $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(username,email,password)VALUES(?,?,?)');
             $insertUserOnWebsite->execute(array($user_username,$user_email,$user_password));
             //récuperer les infos de l'utilisateur
-            $getInfoOfThisUserReq = $bdd->prepare('SELECT id , username FROM users WHERE username = ?');
+            $getInfoOfThisUserReq = $bdd->prepare('SELECT * FROM users WHERE username = ?');
             $getInfoOfThisUserReq->execute(array($user_username));
 
             $userInfos = $getInfoOfThisUserReq->fetch();
@@ -28,6 +28,7 @@ if(isset($_POST['validate'])){
             $_SESSION['id'] = $userInfos['id'];
             $_SESSION['username'] = $userInfos['username'];
             $_SESSION['email'] = $userInfos['email'];
+            $_SESSION['admin'] = $userInfos['admin'];
             // redirige l'utilisateur vers la page d'acceuil
             header('location: index.php');
 
@@ -61,6 +62,7 @@ if(isset($_POST['validate1'])){
             $_SESSION['id'] = $userInfos['id'];
             $_SESSION['username'] = $userInfos['username'];
             $_SESSION['email'] = $userInfos['email'];
+            $_SESSION['admin'] = $userInfos['admin'];
             // redirige l'utilisateur vers la page d'acceuil
             header('location: index.php');
             }else{

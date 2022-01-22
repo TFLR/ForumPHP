@@ -21,19 +21,27 @@ require('actions/users/modifyUserInfos.php');
 if($users = $getAllUsersArticles->fetch()){
   ?>
 <div class="container3">
-
+<form action="#" method="POST" enctype="multipart/form-data">
   <div class="card">
-    <!-- <form method="POST" action="" enctype="multipart/form-data" style = "height: 80px">
+    <form method="POST" action="" enctype="multipart/form-data" style = "height: 50px">
       <label class = "label" for="profileImage"> 
         <a style="cursor: pointer;"><em class="fa fa-upload"></em><img src='utilisateurs/pp/bokuto.jpg' width='200' height='200';></a></label> 
         <input type="file" name="pp" id="profileImage" style="display: none;"/>
-      </form> -->
-      <form action="#" method="POST" enctype="multipart/form-data">
-        <input type="file" name="avatar" />
-        <input type="submit" name="mettre a jour" />
+      </form>
+        <!-- <input type="file" name="avatar" />
+        <input type="submit" name="mettre a jour" /> -->
 
       <div class="info" style ="height: 300px;">
-    <?php if(isset($errorMsg)){echo $errorMsg.'</p>';} ?>
+    <?php if(isset($errorMsg)){echo $errorMsg.'</p>';} 
+    if($_SESSION['admin'] == 1){
+      ?>
+      <style>
+      span.name{
+        color:red;
+      }
+        </style>
+      <?php
+    }?>
     <span class="name"><?=$users['username'];?></span>
     <br></br>
     <span class="job"><?=$users['email'];?></span>
