@@ -16,7 +16,7 @@ if(isset($_POST['validate'])){
                $editQuestionOnWebsite->execute(array($newPostTitle, $newPostDescription, $newPostContent,  $idOfPost));
        
                //Redirection vers la page d'affichage des questions de l'utilisateur
-               header('Location: authorposts.php');
+               header('Location: index.php');
     }else{
         $errorMsg = "Veuillez complétez tous les champs !";
     }

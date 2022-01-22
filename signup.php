@@ -1,4 +1,3 @@
-
 <?php require('actions/users/signupinAction.php')?>
 <!DOCTYPE html>
 <html lang="en">

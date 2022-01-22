@@ -22,17 +22,17 @@ require('actions/articles/editPostsAction.php');
         <form action="#" method="POST">
 <div>
             <label for="exampleInputEmail1" class="form-label">Titre de l'article</label>
-            <input type="text" class="form-control" name="title" value = "<?= $Post_title?>">
+            <input type="text" class="form-control" name="title" value = "<?= $Post_title?>"style='text-align: center;margin-top: 20px;'>
         </div>
         <div>
             <label for="exampleInputEmail1" class="form-label">Description de l'article</label>
-            <textarea class="form-control" name="description"><?= $Post_description?></textarea>
+            <textarea class="form-control" name="description" style='text-align: center;margin-top: 20px;'><?= $Post_description?></textarea>
         </div>
         <div>
             <label for="exampleInputEmail1" class="form-label">Contenu de l'article</label>
-            <textarea type="text" class="form-control" name="content"><?= $Post_content?></textarea>
+            <textarea type="text" class="form-control" name="content" style='text-align: center;margin-top: 20px;'><?= $Post_content?></textarea>
         </div>
- <button type="submit" class="btn btn-primary" name="validate">Modifier l'article</button>
+ <button type="submit" class="btn btn-primary" name="validate" style='text-align: center;margin-top: 20px;'>Modifier l'article</button>
 		</form>
         <?php
     }

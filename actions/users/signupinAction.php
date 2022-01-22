@@ -27,8 +27,9 @@ if(isset($_POST['validate'])){
             $_SESSION['auth'] = true;
             $_SESSION['id'] = $userInfos['id'];
             $_SESSION['username'] = $userInfos['username'];
+            $_SESSION['email'] = $userInfos['email'];
             // redirige l'utilisateur vers la page d'acceuil
-            // header('location: index.php');
+            header('location: index.php');
 
         }else{
             $errorMsg = "L'utilisateur existe déjà ou l'email est déjà utilisée";
@@ -59,6 +60,7 @@ if(isset($_POST['validate1'])){
             $_SESSION['auth'] = true;
             $_SESSION['id'] = $userInfos['id'];
             $_SESSION['username'] = $userInfos['username'];
+            $_SESSION['email'] = $userInfos['email'];
             // redirige l'utilisateur vers la page d'acceuil
             header('location: index.php');
             }else{

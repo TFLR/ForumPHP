@@ -15,7 +15,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         if($usersInfos['author_id']== $_SESSION['id']){
             $deleteArticle = $bdd->prepare('DELETE FROM articles WHERE id = ?');
             $deleteArticle->execute(array($idArticle));
-            header('location: ../../authorposts.php');
+            header('location: ../../index.php');
         }else{
             echo "Aucun article n'a été trouvée";
         }

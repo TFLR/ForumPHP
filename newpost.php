@@ -18,17 +18,17 @@ require ('actions/articles/newPostAction.php');
         ?>
 <div>
             <label for="exampleInputEmail1" class="form-label">Titre de l'article</label>
-            <input type="text" class="form-control" name="title">
+            <input type="text" class="form-control" name="title" style='text-align: center;margin-top: 20px;'>
         </div>
         <div>
             <label for="exampleInputEmail1" class="form-label">Description de l'article</label>
-            <textarea class="form-control" name="description"></textarea>
+            <textarea class="form-control" name="description" style='text-align: center;margin-top: 20px;'></textarea>
         </div>
         <div>
             <label for="exampleInputEmail1" class="form-label">Contenu de l'article</label>
-            <textarea type="text" class="form-control" name="content"></textarea>
+            <textarea type="text" class="form-control" name="content" style='text-align: center;margin-top: 20px;'></textarea>
         </div>
- <button type="submit" class="btn btn-primary" name="validate">Publier l'article</button>
+ <button type="submit" class="btn btn-primary" name="validate" style='text-align: center;margin-top: 20px;'>Publier l'article</button>
 		</form>
     <script src="./assets/navbar.js"></script>
 </body>
