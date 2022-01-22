@@ -1,3 +1,4 @@
+
 <header class="header-area">
   <!-- site-navbar start -->
   <div class="navbar-area">
@@ -11,7 +12,13 @@
           <li><a href="index.php">Home</a></li>
           <li><a href="newpost.php">New</a></li>
           <li><a href="profil.php">Account</a></li>
-          <li><a href="#">Panel Admin</a></li>
+          <?php
+          if($_SESSION['admin'] == 1){
+          ?>
+          <li><a href="adminpanel.php">Panel Admin</a></li>
+          <?php
+          }
+          ?>
           <li><a href="actions/users/logoutAction.php">Logout</a></li>
         </ul>
 

@@ -1,8 +1,8 @@
 <?php 
 require('actions/users/securityAction.php');
-require('actions/articles/allAuthorPosts.php');
+require('actions/users/securityAdmin.php');
 require('actions/users/allUsersInfosAction.php');
-require('actions/users/modifyUserInfos.php');
+require('actions/users/adminModifyUsers.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +13,14 @@ require('actions/users/modifyUserInfos.php');
     <link rel="stylesheet" href="./assets/navbar.css">
     <link rel="stylesheet" href="./assets/card.css">
     <link rel="stylesheet" href="./assets/profil.css">
-    <title>Forum</title>
+    <title>Document</title>
 </head>
 <body>
 <?php include 'includes/navbar.php'; ?> 
-    <?php
-if($users = $getAllUsersArticles->fetch()){
-  ?>
+<?php
+if(isset($errorMsg)){echo $errorMsg.'</p>';} 
+while($users = $getAllUsers->fetch()){
+    ?> 
 <div class="container3">
 <form action="#" method="POST" enctype="multipart/form-data">
   <div class="card">
@@ -32,16 +33,12 @@ if($users = $getAllUsersArticles->fetch()){
         <input type="submit" name="mettre a jour" /> -->
 
       <div class="info" style ="height: 300px;">
-    <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} 
-    if($_SESSION['admin'] == 1){
-      ?>
-      <style>
-      span.name{
-        color:red;
-      }
-        </style>
-      <?php
-    }?>
+    <?php
+    if($users['admin'] == 1){
+echo "admin:yes";
+      }else{
+        echo "admin:no";  
+      }?>
     <span class="name"><?=$users['username'];?></span>
     <br></br>
     <span class="job"><?=$users['email'];?></span>
@@ -66,31 +63,7 @@ if($users = $getAllUsersArticles->fetch()){
 }
 ?>
 
-<p class="title">Articles postés :</p>
-<?php
-        while($articles = $getAllAuthorArticles->fetch()){
-
-            ?>
-  <section id="postIndex" class="widthWrapper">
-
-    <article>
-    <div class="container">  
-      <a href="view.php?id=<?= $articles['id']; ?>">
-        <h2><?=$articles['title'];?></h2>
-        <p><?=$articles['description'];?></p>
-        <br> </br>
-        <span class="subtle"><?=$articles['date'];?></span>
-        <a href="actions/articles/deletePostAction.php?id=<?= $articles['id']; ?>" class = "button">Delete</a>
-        <a href="editposts.php?id=<?= $articles['id']; ?>" class = "button">Modify</a>
-        <?php
-    }
-    ?>
-      </a>
-      </div>
-    </article>
-  </section>
-
-  <style>a.button {
+<style>a.button {
   display:inline-block;
   height: 20px;
   width: 100px;
