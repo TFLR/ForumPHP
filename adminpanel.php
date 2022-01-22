@@ -2,7 +2,6 @@
 require('actions/users/securityAction.php');
 require('actions/users/securityAdmin.php');
 require('actions/users/allUsersInfosAction.php');
-require('actions/users/adminModifyUsers.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,63 +20,50 @@ require('actions/users/adminModifyUsers.php');
 if(isset($errorMsg)){echo $errorMsg.'</p>';} 
 while($users = $getAllUsers->fetch()){
     ?> 
-<div class="container3">
-<form action="#" method="POST" enctype="multipart/form-data">
-  <div class="card">
-    <form method="POST" action="" enctype="multipart/form-data" style = "height: 50px">
-      <label class = "label" for="profileImage"> 
-        <a style="cursor: pointer;"><em class="fa fa-upload"></em><img src='utilisateurs/pp/bokuto.jpg' width='200' height='200';></a></label> 
-        <input type="file" name="pp" id="profileImage" style="display: none;"/>
-      </form>
-        <!-- <input type="file" name="avatar" />
-        <input type="submit" name="mettre a jour" /> -->
-
-      <div class="info" style ="height: 300px;">
+<form action="#" method="POST">
+    <div class = "contains">
     <?php
-    if($users['admin'] == 1){
-echo "admin:yes";
+    if($users['admin'] == 2){
+echo "admin:yes \n";
       }else{
-        echo "admin:no";  
+        echo "admin:no \n"; 
       }?>
-    <span class="name"><?=$users['username'];?></span>
+        <br></br>
+    <span class="name">Nom d'utilisateur : <?=$users['username'];?></span>
     <br></br>
-    <span class="job"><?=$users['email'];?></span>
-    <div>
-    <label for="exampleInputEmail1" class="form-label">Nouveau nom d'utilisateur :</label>
-    <input type="text" class="form-control" name="username">
-    </div>
-    <div>
-    <label for="exampleInputEmail1" class="form-label">Nouveau email :</label>
-    <input type="email" class="form-control" name="email">
-    </div>
-<div>
-            <label for="exampleInputEmail1" class="form-label">Nouveau mot de passe :</label>
-            <input type="password" class="form-control" name="password">
-        </div>
-        </div>
-      <button name="validate">Change</button>
+    <span class="name">Email : <?=$users['email'];?></span>
+    <br></br>
+      <a name="validate" href= "modifyprofil.php?id=<?= $users['id']; ?>" class ="button">Change</a>
+      
   </div>
 </form>
-</div>
 <?php
 }
 ?>
 
-<style>a.button {
-  display:inline-block;
-  height: 20px;
-  width: 100px;
-}
+<style>
 
-.container{  
+.contains{  
+position: relative;
 text-align: center;  
-}  
+border: solid;
+height: 200px;
+width: 400px;
+left:40%;
+margin-top: 20px;
+} 
 
-img{
-  position: relative;
-  left: 100px;
+a.button{
+    font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }
-
 </style>
 <script src="./assets/navbar.js"></script>
 </body>

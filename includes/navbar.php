@@ -13,7 +13,7 @@
           <li><a href="newpost.php">New</a></li>
           <li><a href="profil.php">Account</a></li>
           <?php
-          if($_SESSION['admin'] == 1){
+          if($_SESSION['admin'] == 2){
           ?>
           <li><a href="adminpanel.php">Panel Admin</a></li>
           <?php

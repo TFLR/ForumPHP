@@ -10,7 +10,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
     if($checkIfPostExists->rowCount() > 0){
 
         $postsInfos = $checkIfPostExists->fetch();
-        if(($postsInfos['author_id'] == $_SESSION['id']) OR $_SESSION['admin'] = 1){
+        if(($postsInfos['author_id'] == $_SESSION['id']) OR $_SESSION['admin'] = 2){
 
             $Post_title = $postsInfos['title'];
             $Post_description = $postsInfos['description'];

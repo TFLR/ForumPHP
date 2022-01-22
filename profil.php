@@ -33,7 +33,7 @@ if($users = $getAllUsersArticles->fetch()){
 
       <div class="info" style ="height: 300px;">
     <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} 
-    if($_SESSION['admin'] == 1){
+    if($_SESSION['admin'] == 2){
       ?>
       <style>
       span.name{
