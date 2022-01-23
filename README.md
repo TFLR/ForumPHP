@@ -33,4 +33,4 @@ Nous avons utilisé pour ce projet :
 * Modifier les informations des postes que l'on a créer
 * Un panel Admin 
 * La possibilité pour l'admin de modifier ou supprimer des postes
-* La possibilité pour l'admin de modifier des informations de compte et attribuer le rôle admin à une personne(1 = rôle par default , 2 = rôle admin)
+* La possibilité pour l'admin de modifier des informations de compte et attribuer le rôle admin à un utilisateur (1 = rôle par default , 2 = rôle admin)
