@@ -8,7 +8,7 @@
 ## Sujet
 
 
-Pour ce projet nous devions faire un forum avec les fonctoinnalitées suivantes :
+Pour ce projet nous devions faire un forum avec les fonctionnalités suivantes :
 - Une page `Login` et `Register` pour pouvoir se connecter et créer son compte    
 - Une page `Home` qui va recenser tous les articles postés avec le plus récent en premier
 - Une page `New` qui permet de rédiger un nouvel article
@@ -33,4 +33,4 @@ Nous avons utilisé pour ce projet :
 * Modifier les informations des postes que l'on a créer
 * Un panel Admin 
 * La possibilité pour l'admin de modifier ou supprimer des postes
-* La possibilité pour l'admin de modifier des informations de compte
+* La possibilité pour l'admin de modifier des informations de compte et attribuer le rôle admin à une personne(1 = rôle par default , 2 = rôle admin)
