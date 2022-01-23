@@ -28,9 +28,6 @@ if($users = $getAllUsersArticles->fetch()){
         <a style="cursor: pointer;"><em class="fa fa-upload"></em><img src='utilisateurs/pp/bokuto.jpg' width='200' height='200';></a></label> 
         <input type="file" name="pp" id="profileImage" style="display: none;"/>
       </form>
-        <!-- <input type="file" name="avatar" />
-        <input type="submit" name="mettre a jour" /> -->
-
       <div class="info" style ="height: 300px;">
     <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} 
     if($_SESSION['admin'] == 2){

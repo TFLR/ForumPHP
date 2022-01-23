@@ -1,9 +1,9 @@
 <?php
     require('actions/users/securityAction.php');
-    require('actions/articles/allAuthorsPosts.php');
     require('actions/articles/allAuthorPosts.php');
+    require('actions/articles/showAllArticlesAction.php');
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +19,12 @@
 <?php include 'includes/head.php'; ?>
 <body>
 <?php include 'includes/navbar.php'; ?> 
+<form method="GET">
+<input type="search" name="search" id="" placeholder="recherche">
+<button type="submit">Valider</button>
+</form>
 <?php
-        while($articles = $getAllAuthorsArticles->fetch()){
+        while($articles = $getAllAuthorArticles->fetch()){
 
             ?>
   <section id="postIndex" class="widthWrapper">
@@ -199,6 +203,18 @@ a.button {
 .container{  
 text-align: center;  
 }  
+
+input{
+  margin-top:20Px;
+  height:20px;
+  width:300px;
+  position: relative;
+    left: 41%;
+}
+button{
+  position: relative;
+    left: 41%;
+}
 </style>
 <script src="./assets/navbar.js"></script>
 </body>
