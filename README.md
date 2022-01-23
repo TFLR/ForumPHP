@@ -29,8 +29,9 @@ Nous avons utilisé pour ce projet :
 
 * Créer un compte 
 * Modifier les informations de son compte
-* Créer des postes
-* Modifier les informations des postes que l'on a créer
+* Créer des posts
+* Barre de recherche pour filtrer les posts
+* Modifier les informations des posts que l'on a créer
 * Un panel Admin 
-* La possibilité pour l'admin de modifier ou supprimer des postes
+* La possibilité pour l'admin de modifier ou supprimer des posts
 * La possibilité pour l'admin de modifier des informations de compte et attribuer le rôle admin à un utilisateur (1 = rôle par default , 2 = rôle admin)
